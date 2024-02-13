@@ -1,6 +1,12 @@
 
 # Algorithmic Trading Assignment Report
 
+## Subtask 3 of Assignment 1 - COP290
+
+**Submitted by:**
+- Soumyaprabha Dey (Entry Number: 2022CS11107)
+- Ayush Gupta (Entry Number: 2022CS11114)
+
 ## Overview
 
 In this assignment, we implemented various algorithmic trading strategies in C++ using historical stock price data. The primary goal was to generate daily cash flow and order statistics for different trading strategies. Each strategy was implemented following specific rules and constraints provided in the assignment document.
@@ -486,7 +492,46 @@ The Pairs Trading Strategy offers a unique approach by focusing on the spread be
 
 ### Stop-Loss in Pairs Trading
 
-Stop-Loss in Pairs Trading adds a risk management element. If the spread moves unexpectedly, positions are closed to prevent further losses.
+#### Insights and Intuitions for Stop-Loss in Pairs Trading Strategy
+
+#### Overview
+
+The Stop-Loss in Pairs Trading Strategy introduces a loss-based constraint to manage unwanted positions in pairs trading. Here are key insights and intuitions regarding the implementation of this stop-loss strategy:
+
+##### 1. Rationale for Stop-Loss
+
+- **Unwanted Positions:** In pairs trading, if the spread moves unexpectedly in the wrong direction, we may want to clear positions to make room for new opportunities and prevent further losses.
+
+- **Stop-Loss Threshold:** The strategy employs a stop_loss_threshold to close positions when the z-score crosses this threshold in the opposite direction to the expected mean reversion.
+
+##### 2. Stop-Loss Calculation
+
+- **Same Mean and Std Dev:** The stop-loss threshold uses the same mean and standard deviation calculated at the time of opening the position. This ensures consistency in evaluating unexpected spread movements.
+
+- **Closing Single Position:** The stop-loss triggers the closing of the single position when the z-score crosses the stop_loss_threshold.
+
+##### 3. Constraints and Assumptions
+
+- **Consistency:** The strategy maintains consistency with the assumptions and constraints of the Pairs Trading Strategy, including maximum position size and mean-reverting dynamics.
+
+##### 4. Parameter Configuration
+
+- **Additional Parameter:** The stop_loss_threshold is an additional parameter introduced to control when to close positions based on unexpected spread movements.
+
+##### 5. Output Generation
+
+- **CSV Files:** Similar to the Pairs Trading Strategy, the stop-loss strategy generates three CSV files - `daily_cashflow.csv`, `order_statistics_1.csv` (for Stock1), and `order_statistics_2.csv` (for Stock2).
+
+##### 6. Salient Features in the Code
+
+- **Dynamic Stop-Loss Execution:** The stop-loss strategy dynamically closes positions based on z-score movements, preventing prolonged exposure to unfavorable spread dynamics.
+
+- **Integrated with Pairs Trading:** The stop-loss is seamlessly integrated into the Pairs Trading Strategy, enhancing risk management.
+
+#### Conclusion
+
+The Stop-Loss in Pairs Trading Strategy provides a mechanism to exit unwanted positions based on z-score movements, ensuring adaptive risk management. By introducing this stop-loss mechanism, the strategy enhances its robustness and flexibility in responding to unexpected market conditions.
+
 
 ## Conclusion
 
