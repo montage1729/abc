@@ -533,6 +533,11 @@ The Stop-Loss in Pairs Trading Strategy introduces a loss-based constraint to ma
 The Stop-Loss in Pairs Trading Strategy provides a mechanism to exit unwanted positions based on z-score movements, ensuring adaptive risk management. By introducing this stop-loss mechanism, the strategy enhances its robustness and flexibility in responding to unexpected market conditions.
 
 
+
+## Graphs
+
+We have drawn graphs of cashflow vs date for all the strategies that we have implemented 
+
 ## Conclusion
 
 The implementation of various trading strategies provides a comprehensive understanding of algorithmic trading concepts. Each strategy has its strengths and weaknesses, and the choice of strategy depends on market conditions and risk tolerance. The use of machine learning (Linear Regression) and statistical indicators (RSI, ADX) adds sophistication to the trading approach. The Pairs Trading strategy, coupled with stop-loss mechanisms, demonstrates risk management practices in algorithmic trading.
